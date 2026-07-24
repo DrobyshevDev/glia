@@ -4,6 +4,13 @@ All notable changes to glia are documented here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/); this project uses
 [Semantic Versioning](https://semver.org/).
 
+## [0.8.1] — 2026-07-24
+
+### Fixed
+- Shell conversation IDs used millisecond timestamps and could collide when two
+  conversations were created within the same millisecond (surfaced as a flaky
+  test on fast runners). IDs are now unique (timestamp + a short uuid).
+
 ## [0.8.0] — 2026-07-24
 
 ### Changed

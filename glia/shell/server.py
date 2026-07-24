@@ -27,6 +27,7 @@ import asyncio
 import json
 import threading
 import time
+import uuid
 from http.server import BaseHTTPRequestHandler
 from importlib import resources
 
@@ -81,7 +82,8 @@ class ShellState:
         return items
 
     def new_conversation(self) -> str:
-        cid = f"c{int(time.time() * 1000)}"
+        # Millisecond timestamps can collide on rapid creation; a uuid can't.
+        cid = f"c{int(time.time())}-{uuid.uuid4().hex[:8]}"
         self.current_id = cid
         self.trajectory = Trajectory.new(system=self.config.system)
         self.save_current()
