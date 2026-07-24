@@ -26,17 +26,17 @@
     <!-- sidebar -->
     <rect x="20" y="20" width="230" height="650" fill="#f2f1ec"/>
     <line x1="250" y1="20" x2="250" y2="670" stroke="#e7e4dd"/>
-    <rect x="40" y="42" width="20" height="20" rx="6" fill="#0d9488"/>
-    <text x="68" y="58" font-size="16" font-weight="650" fill="#232620">glia</text>
+    <g transform="translate(40,42) scale(0.6)" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M16 3.6 L26.8 9.8 L26.8 22.2 L16 28.4 L5.2 22.2 L5.2 9.8 Z"/><path d="M16 16 L5.2 9.8 M16 16 L26.8 9.8 M16 16 L16 28.4"/></g>
+    <text x="70" y="58" font-size="16" font-weight="650" fill="#232620">glia</text>
     <rect x="40" y="78" width="190" height="36" rx="9" fill="#fff" stroke="#e7e4dd"/>
-    <text x="135" y="101" font-size="13.5" font-weight="600" fill="#4c4f47" text-anchor="middle">＋ New chat</text>
+    <text x="135" y="101" font-size="13.5" font-weight="600" fill="#4c4f47" text-anchor="middle">New chat</text>
     <rect class="a t1" x="34" y="128" width="202" height="34" rx="9" fill="#fff"/>
     <text class="a t1" x="48" y="150" font-size="13.5" fill="#232620">Weather in Paris?</text>
     <text x="48" y="188" font-size="13.5" fill="#85867b">Summarise this doc</text>
     <text x="48" y="222" font-size="13.5" fill="#85867b">Refactor my parser</text>
     <line x1="20" y1="628" x2="250" y2="628" stroke="#e7e4dd"/>
-    <text x="42" y="653" font-size="12.5" fill="#85867b">⚙ Settings</text>
-    <text x="135" y="653" font-size="12.5" fill="#85867b">◑ Theme</text>
+    <text x="42" y="653" font-size="12.5" fill="#85867b">Settings</text>
+    <text x="125" y="653" font-size="12.5" fill="#85867b">Theme</text>
 
     <!-- topbar -->
     <rect x="250" y="20" width="930" height="52" fill="#fff"/>
@@ -44,7 +44,7 @@
     <text x="274" y="52" font-size="15" font-weight="600" fill="#232620">Weather in Paris?</text>
     <rect x="470" y="36" width="58" height="21" rx="10" fill="#0d9488"/>
     <text x="499" y="51" font-size="11.5" fill="#fff" text-anchor="middle">Claude</text>
-    <text x="1120" y="52" font-size="13" fill="#85867b" text-anchor="end">◧ Glass box</text>
+    <text x="1120" y="52" font-size="13" fill="#85867b" text-anchor="end">Glass box</text>
 
     <!-- chat -->
     <g class="a t1">
@@ -54,8 +54,8 @@
       <text x="490" y="124" font-size="14" fill="#fff">What's the weather in Paris?</text>
     </g>
     <g class="a t7">
-      <circle cx="288" cy="182" r="15" fill="#0d9488"/>
-      <text x="288" y="187" font-size="12" fill="#fff" text-anchor="middle">◆</text>
+      <circle cx="288" cy="182" r="15" fill="#d7efec" stroke="#e7e4dd"/>
+      <g transform="translate(280,174) scale(0.5)" fill="none" stroke="#0d9488" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"><path d="M16 3.6 L26.8 9.8 L26.8 22.2 L16 28.4 L5.2 22.2 L5.2 9.8 Z"/><path d="M16 16 L5.2 9.8 M16 16 L26.8 9.8 M16 16 L16 28.4"/></g>
       <text x="314" y="172" font-size="12" font-weight="650" fill="#85867b">glia</text>
       <text x="314" y="194" font-size="14.5" fill="#232620">It's <tspan font-weight="700">18°C</tspan> and cloudy in Paris.<tspan class="cursor" fill="#0d9488">▋</tspan></text>
     </g>
