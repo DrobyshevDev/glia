@@ -1,6 +1,8 @@
+<p align="center"><img src="docs/assets/logo.svg" width="66" alt="glia"></p>
+
 # glia
 
-[English](README.md) · **Русский** · [📖 Документация](https://denisdrobyshev.github.io/glia/)
+[English](README.md) · **Русский** · [Документация](https://denisdrobyshev.github.io/glia/)
 
 **Минималистичная «прозрачная» (glass-box) библиотека для создания LLM-агентов.**
 Каждый вызов модели, каждый вызов инструмента и каждое изменение состояния —
@@ -153,7 +155,7 @@ python examples/09_record_replay.py          # записать один раз,
 
 ## Документация
 
-- 📖 **[Сайт документации](https://denisdrobyshev.github.io/glia/)** — полное руководство на **English** и **Русском**
+- **[Сайт документации](https://denisdrobyshev.github.io/glia/)** — полное руководство на **English** и **Русском**
 - [Стратегия и анализ рынка](docs/STRATEGY.md) — зачем glia и с кем конкурирует
 - [Архитектура](docs/ARCHITECTURE.md) — как всё устроено
 - [Дорожная карта](docs/ROADMAP.md) — куда движемся

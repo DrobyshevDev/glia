@@ -21,9 +21,9 @@ opening glia is built for.
 
 | Framework | Lane it owns | Traction (mid-2026) | Weakness glia targets |
 |---|---|---|---|
-| **LangGraph** | Controllable, stateful, production orchestration (graph model) | ~34k★, ~38M downloads/mo, v1.0 GA | Heavy concepts; you debug the framework, not your logic |
-| **CrewAI** | Role-based multi-agent "teams" | ~44.6k★, millions of runs/mo | Ergonomic but opaque; hard to see/what/why at runtime |
-| **OpenAI Agents SDK** | Fast path inside the OpenAI ecosystem | ~19k★ | Vendor-centric; thin on portability |
+| **LangGraph** | Controllable, stateful, production orchestration (graph model) | ~34k stars, ~38M downloads/mo, v1.0 GA | Heavy concepts; you debug the framework, not your logic |
+| **CrewAI** | Role-based multi-agent "teams" | ~44.6k stars, millions of runs/mo | Ergonomic but opaque; hard to see/what/why at runtime |
+| **OpenAI Agents SDK** | Fast path inside the OpenAI ecosystem | ~19k stars | Vendor-centric; thin on portability |
 | **Claude Agent SDK** | Batteries-included coding/filesystem agent on Claude | Anthropic-backed | A full harness, not a small library to build _on_ |
 | **PydanticAI** | Typed Python outputs | V2 stable | Great at types; not positioned as a minimal glass-box loop |
 | **Microsoft Agent Framework** | Enterprise (Semantic Kernel + AutoGen merged) | 1.0 (Apr 2026) | Enterprise weight and surface area |

@@ -15,36 +15,36 @@ hidden control flow.** If a feature can't be made inspectable, it doesn't ship.
 - Evals-as-tests harness
 - Zero-dependency core, `py.typed`, green CI, runnable offline examples
 
-## v0.8 — a real GUI ✅ (shipped)
+## v0.8 — a real GUI — shipped
 - [x] Redesigned desktop shell: conversation sidebar with persistent history
 - [x] Markdown + code rendering, theme toggle, glass-box drawer, prompt chips
 
-## v0.7 — observability & polish ✅ (shipped)
+## v0.7 — observability & polish — shipped
 - [x] OpenTelemetry span exporter driven off the event stream
 - [x] Redesigned desktop shell UI + an animated README hero
 - [ ] A local trace viewer for saved trajectories
 
-## v0.6 — record & replay ✅ (shipped)
+## v0.6 — record & replay — shipped
 - [x] Record/replay cassettes (`RecordingLLM` / `ReplayLLM` / `use_cassette`)
 
-## v0.5 — reach & rigor ✅ (shipped)
+## v0.5 — reach & rigor — shipped
 - [x] `OpenAILLM` provider (OpenAI-compatible; streaming + tools)
 - [x] Interactive approval UI in the desktop shell (approve/deny from the window)
 - [x] MCP tool bridge (`glia.integrations.mcp`, `[mcp]` extra)
 - [x] mypy as a CI gate; coverage restored to ~95%; README hero image
 
-## v0.4 — local models ✅ (shipped)
+## v0.4 — local models — shipped
 - [x] `OllamaLLM` provider (stdlib HTTP, streaming + tools) for local open models
 - [x] Ollama mode in the desktop shell (Qwen, DeepSeek, Llama, …)
 - [x] A second hosted provider (OpenAI) — shipped in v0.5
 
-## v0.3 — the desktop shell ✅ (shipped)
+## v0.3 — the desktop shell — shipped
 - [x] `glia-shell` graphical chat app with a live glass-box event panel
 - [x] Pure-stdlib local server; native window via pywebview + browser fallback
 - [x] Offline demo mode + optional Anthropic key; downloadable per-OS binaries
 - [ ] Interactive approval UI in the shell (approve/deny tools from the window)
 
-## v0.2 — ergonomics & throughput ✅ (shipped)
+## v0.2 — ergonomics & throughput — shipped
 - [x] Streaming token output through the event stream (`ModelDelta` events)
 - [x] Parallel tool execution (`asyncio.gather`) with preserved event ordering
 - [x] Human-in-the-loop tool approval as a first-class, inspectable gate

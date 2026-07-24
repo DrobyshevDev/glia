@@ -4,6 +4,17 @@ All notable changes to glia are documented here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/); this project uses
 [Semantic Versioning](https://semver.org/).
 
+## [0.8.2] — 2026-07-24
+
+### Changed
+- **New logo** — a minimal "glass box" mark (a transparent cube with a node),
+  tying the identity to the glass-box concept. Used in the shell (sidebar,
+  avatars, favicon), the README, and the animated hero.
+- **Removed all emoji and decorative glyphs** from the shell UI (buttons now use
+  clean text or minimal line icons), the README, and the docs — a more
+  professional, less "AI-generated" look. Refined the empty-state copy away from
+  the generic "How can I help?" cliché.
+
 ## [0.8.1] — 2026-07-24
 
 ### Fixed

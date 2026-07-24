@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>glia</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%230d9488' stroke-width='2.6' stroke-linejoin='round'><path d='M16 3.6 L26.8 9.8 L26.8 22.2 L16 28.4 L5.2 22.2 L5.2 9.8 Z'/><path d='M16 16 L5.2 9.8 M16 16 L26.8 9.8 M16 16 L16 28.4'/></svg>">
 <style>
   :root {
     --bg: #f7f6f3; --surface: #ffffff; --surface-2: #f1efea; --sidebar: #f2f1ec;
@@ -47,7 +48,8 @@
   aside { background: var(--sidebar); border-right: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; }
   .side-head { padding: 16px 14px 10px; }
   .brand { display: flex; align-items: center; gap: 9px; font-weight: 650; font-size: 17px; letter-spacing: -.01em; margin: 2px 4px 14px; }
-  .brand .mark { width: 22px; height: 22px; border-radius: 7px; background: linear-gradient(140deg, var(--accent), #34d3c1); box-shadow: 0 2px 8px -2px var(--accent); }
+  .brand svg { width: 23px; height: 23px; color: var(--accent); }
+  .ic { width: 15px; height: 15px; flex: none; }
   .new-btn { width: 100%; padding: 10px 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px; justify-content: center; }
   .new-btn:hover { border-color: var(--accent); color: var(--accent); }
   .conv-list { flex: 1; overflow-y: auto; padding: 6px 8px; display: flex; flex-direction: column; gap: 2px; }
@@ -74,8 +76,9 @@
   .row { display: flex; gap: 13px; animation: rise .25s ease both; }
   @keyframes rise { from { opacity: 0; transform: translateY(6px); } }
   .avatar { width: 30px; height: 30px; border-radius: 9px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-top: 1px; }
-  .avatar.bot { background: linear-gradient(140deg, var(--accent), #34d3c1); color: #fff; }
-  .avatar.user { background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--line); }
+  .avatar svg { width: 17px; height: 17px; }
+  .avatar.bot { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--line); }
+  .avatar.user { background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); }
   .bubble { min-width: 0; }
   .bubble .who { font-size: 12.5px; font-weight: 650; color: var(--muted); margin-bottom: 3px; }
   .bubble .content { color: var(--ink); }
@@ -105,7 +108,8 @@
 
   /* Empty state */
   .empty { max-width: 560px; margin: min(9vh, 90px) auto 0; text-align: center; }
-  .empty .mark { width: 48px; height: 48px; border-radius: 14px; margin: 0 auto 18px; background: linear-gradient(140deg, var(--accent), #34d3c1); box-shadow: 0 10px 28px -8px var(--accent); }
+  .empty .logo { width: 50px; height: 50px; color: var(--accent); margin: 0 auto 20px; display: block; }
+  .new-btn .ic, .icon-btn .ic { margin-right: 2px; }
   .empty h2 { margin: 0 0 8px; font-weight: 650; letter-spacing: -.015em; font-size: 25px; }
   .empty p { margin: 0 auto 22px; color: var(--muted); max-width: 460px; }
   .chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
@@ -166,14 +170,14 @@
   <div id="app">
     <aside>
       <div class="side-head">
-        <div class="brand"><span class="mark"></span>glia</div>
-        <button id="newChat" class="new-btn">＋ New chat</button>
+        <div class="brand"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M16 3.6 L26.8 9.8 L26.8 22.2 L16 28.4 L5.2 22.2 L5.2 9.8 Z"/><path d="M16 16 L5.2 9.8 M16 16 L26.8 9.8 M16 16 L16 28.4"/><circle cx="16" cy="16" r="1.7" fill="currentColor" stroke="none"/></svg>glia</div>
+        <button id="newChat" class="new-btn"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M8 3.2v9.6M3.2 8h9.6"/></svg>New chat</button>
       </div>
       <div id="convList" class="conv-list"></div>
       <div class="side-foot">
-        <button id="openSettings" class="icon-btn">⚙ Settings</button>
-        <button id="themeBtn" class="icon-btn" title="Toggle theme">◑ Theme</button>
-        <button id="quit" class="icon-btn" title="Quit the app">⏻</button>
+        <button id="openSettings" class="icon-btn">Settings</button>
+        <button id="themeBtn" class="icon-btn" title="Toggle theme">Theme</button>
+        <button id="quit" class="icon-btn" title="Quit the app">Quit</button>
       </div>
     </aside>
 
@@ -182,7 +186,7 @@
         <div id="convTitle" class="title">New chat</div>
         <span id="mode" class="badge">demo</span>
         <div class="spacer"></div>
-        <button id="toggleGlass" class="icon-btn" title="Show the live glass box">◧ Glass box</button>
+        <button id="toggleGlass" class="icon-btn" title="Show the live glass box">Glass box</button>
       </div>
 
       <div id="thread" class="thread"><div class="thread-inner" id="threadInner"></div></div>
@@ -198,7 +202,7 @@
 
   <div id="scrim" class="scrim"></div>
   <aside id="glass" class="glass">
-    <h3>Glass box · live events <span id="closeGlass" class="x">✕</span></h3>
+    <h3>Glass box · live events <span id="closeGlass" class="x"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg></span></h3>
     <div id="events" class="events"></div>
     <div class="foot">Every model call, tool call, and approval — exactly as the library emits them.</div>
   </aside>
@@ -268,6 +272,8 @@
 
 <script>
 const $ = (id) => document.getElementById(id);
+const LOGO = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M16 3.6 L26.8 9.8 L26.8 22.2 L16 28.4 L5.2 22.2 L5.2 9.8 Z"/><path d="M16 16 L5.2 9.8 M16 16 L26.8 9.8 M16 16 L16 28.4"/><circle cx="16" cy="16" r="1.7" fill="currentColor" stroke="none"/></svg>';
+const USER_ICON = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="8" cy="5.6" r="2.4"/><path d="M3.6 13c0-2.6 2-4.2 4.4-4.2s4.4 1.6 4.4 4.2"/></svg>';
 const thread = $("threadInner"), events = $("events");
 let sending = false;
 
@@ -315,7 +321,7 @@ function addMessage(role, text, { markdown=false } = {}) {
   clearEmpty();
   const row = document.createElement("div"); row.className = "row " + role;
   const av = document.createElement("div"); av.className = "avatar " + (role === "user" ? "user" : "bot");
-  av.textContent = role === "user" ? "you" : "◆";
+  av.innerHTML = role === "user" ? USER_ICON : LOGO;
   const bub = document.createElement("div"); bub.className = "bubble";
   if (role !== "user") { const who = document.createElement("div"); who.className = "who"; who.textContent = "glia"; bub.appendChild(who); }
   const content = document.createElement("div"); content.className = "content";
@@ -327,13 +333,13 @@ function addMessage(role, text, { markdown=false } = {}) {
 
 function showEmpty() {
   thread.innerHTML = `<div class="empty">
-    <div class="mark"></div>
-    <h2>How can glia help?</h2>
-    <p>Running in <b id="emptyMode">demo</b> mode. Open <b>Settings</b> to run a local model with Ollama, or use Claude or OpenAI. Watch every step in the glass box.</p>
+    ${LOGO.replace('<svg', '<svg class="logo"')}
+    <h2>A transparent agent you can see into</h2>
+    <p>Running in <b id="emptyMode">demo</b> mode. Choose a provider in Settings — a local model with Ollama, or Claude or OpenAI. Every model call and tool call shows up in the glass box on the right.</p>
     <div class="chips">
-      <button class="chip" data-p="What can you do?">💡 What can you do?</button>
-      <button class="chip" data-p="Write a haiku about glass boxes.">✍️ Write a haiku</button>
-      <button class="chip" data-p="Explain what an LLM agent is in 3 sentences.">🧠 Explain LLM agents</button>
+      <button class="chip" data-p="What can you do?">What can you do?</button>
+      <button class="chip" data-p="Write a haiku about glass boxes.">Write a haiku about glass boxes</button>
+      <button class="chip" data-p="Explain what an LLM agent is in three sentences.">Explain LLM agents in three sentences</button>
     </div></div>`;
   thread.querySelectorAll(".chip").forEach(c => c.addEventListener("click", () => { $("input").value = c.dataset.p; send(); }));
   const em = $("emptyMode"); if (em) em.textContent = $("mode").textContent;
@@ -362,7 +368,7 @@ function renderApproval(ev){
   const no = document.createElement("button"); no.textContent = "Deny";
   const decide = (allow) => { yes.disabled = no.disabled = true;
     fetch("/api/approve",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({tool_use_id:ev.tool_use_id, allow})});
-    const v = document.createElement("span"); v.className="verdict"; v.textContent = allow ? " ✓ approved" : " ✗ denied"; actions.appendChild(v); };
+    const v = document.createElement("span"); v.className="verdict"; v.textContent = allow ? "approved" : "denied"; actions.appendChild(v); };
   yes.onclick = ()=>decide(true); no.onclick = ()=>decide(false);
   actions.appendChild(yes); actions.appendChild(no);
   row.appendChild(av); row.appendChild(box); thread.appendChild(row); scrollDown();
@@ -416,7 +422,7 @@ async function loadConversations() {
   const list = $("convList"); list.innerHTML = "";
   for (const c of d.conversations) {
     const el = document.createElement("div"); el.className = "conv" + (c.id === d.current ? " active" : "");
-    el.innerHTML = `<span class="title">${esc(c.title)}</span><span class="del" title="Delete">🗑</span>`;
+    el.innerHTML = `<span class="title">${esc(c.title)}</span><span class="del" title="Delete"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5h10M6.4 4.5V3h3.2v1.5M4.6 4.5l.5 8h5.8l.5-8"/></svg></span>`;
     el.querySelector(".title").addEventListener("click", () => selectConversation(c.id));
     el.querySelector(".del").addEventListener("click", (e) => { e.stopPropagation(); deleteConversation(c.id); });
     list.appendChild(el);

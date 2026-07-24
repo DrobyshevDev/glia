@@ -1,6 +1,8 @@
+<p align="center"><img src="docs/assets/logo.svg" width="66" alt="glia"></p>
+
 # glia
 
-**English** · [Русский](README.ru.md) · [📖 Docs](https://denisdrobyshev.github.io/glia/)
+**English** · [Русский](README.ru.md) · [Docs](https://denisdrobyshev.github.io/glia/)
 
 **A glass-box, minimal library for building LLM agents.** Every model call, tool
 call, and state transition is a plain object you can log, snapshot, and replay.
@@ -161,7 +163,7 @@ Full details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Project docs
 
-- 📖 **[Documentation site](https://denisdrobyshev.github.io/glia/)** — full guide, available in **English** and **Русский**
+- **[Documentation site](https://denisdrobyshev.github.io/glia/)** — full guide, available in **English** and **Русский**
 - [Strategy & market analysis](docs/STRATEGY.md) — why glia, and who it competes with
 - [Architecture](docs/ARCHITECTURE.md) — how the whole thing works
 - [Roadmap](docs/ROADMAP.md) — where it's going
