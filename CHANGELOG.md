@@ -4,6 +4,22 @@ All notable changes to glia are documented here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/); this project uses
 [Semantic Versioning](https://semver.org/).
 
+## [0.8.0] — 2026-07-24
+
+### Changed
+- **Redesigned the desktop shell into a modern, multi-conversation app.**
+  - **Conversation sidebar with persistent history** — conversations are saved as
+    glia trajectory checkpoints (plain JSON) in the config dir, so history
+    survives restarts; new/switch/delete from the sidebar. New endpoints:
+    `GET /api/conversations`, `POST /api/conversations/{new,select,delete}`,
+    `GET /api/messages`.
+  - **Markdown + code rendering** for replies (bold, italics, lists, links,
+    headings, and fenced code blocks with copy buttons), safely escaped.
+  - A cleaner top bar, **example-prompt chips** on the empty state, a **slide-in
+    glass-box drawer**, a **light/dark theme toggle**, and a refined settings
+    panel with a segmented provider control. All previous behaviour preserved.
+  - Updated the animated README hero to the new three-pane layout.
+
 ## [0.7.0] — 2026-07-23
 
 ### Added

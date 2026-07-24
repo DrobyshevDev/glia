@@ -283,3 +283,64 @@ def test_server_interactive_approval_deny_round_trip(tmp_path, monkeypatch):
         assert "not approved" in result["body"].lower()
     finally:
         srv.shutdown()
+
+
+# --- persistent conversations -------------------------------------------------
+
+
+def test_conversations_persist_and_title_from_first_message(tmp_path, monkeypatch):
+    monkeypatch.setattr(config_mod, "config_dir", lambda: tmp_path)
+    state = ShellState()  # boots with one empty conversation
+    state.trajectory.add_user("hello world")
+    state.save_current()
+    convs = state.list_conversations()
+    assert len(convs) == 1
+    assert convs[0]["title"] == "hello world"
+
+
+def test_new_select_delete_conversations(tmp_path, monkeypatch):
+    monkeypatch.setattr(config_mod, "config_dir", lambda: tmp_path)
+    state = ShellState()
+    first = state.current_id
+    state.trajectory.add_user("first conv")
+    state.save_current()
+
+    second = state.new_conversation()
+    state.trajectory.add_user("second conv")
+    state.save_current()
+    assert state.current_id == second
+    assert len(state.list_conversations()) == 2
+
+    assert state.select(first) is True
+    assert state.trajectory.messages[0].text() == "first conv"
+
+    state.delete(first)
+    assert first not in [c["id"] for c in state.list_conversations()]
+
+
+def test_conversations_survive_a_fresh_state(tmp_path, monkeypatch):
+    monkeypatch.setattr(config_mod, "config_dir", lambda: tmp_path)
+    s1 = ShellState()
+    s1.trajectory.add_user("remember me")
+    s1.save_current()
+    # A brand-new state (as if the app restarted) still sees the conversation.
+    s2 = ShellState()
+    assert any(c["title"] == "remember me" for c in s2.list_conversations())
+
+
+def test_conversation_and_messages_endpoints(tmp_path, monkeypatch):
+    monkeypatch.setattr(config_mod, "config_dir", lambda: tmp_path)
+    srv, base = _serve(ShellState())
+    try:
+        convs = json.loads(urllib.request.urlopen(base + "/api/conversations", timeout=5).read())
+        assert "conversations" in convs and "current" in convs
+
+        created = json.loads(urllib.request.urlopen(
+            urllib.request.Request(base + "/api/conversations/new", data=b"{}", method="POST"), timeout=5
+        ).read())
+        assert created["id"]
+
+        msgs = json.loads(urllib.request.urlopen(base + "/api/messages", timeout=5).read())
+        assert msgs["messages"] == []  # a fresh conversation has no messages
+    finally:
+        srv.shutdown()

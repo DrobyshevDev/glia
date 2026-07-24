@@ -34,6 +34,11 @@ falling back to your browser if a window backend isn't available. Use
 
 ## Using it
 
+- **Conversations are saved.** The sidebar keeps your chat history (stored as
+  glia trajectory checkpoints in your config directory), so it survives
+  restarts — start new chats, switch between them, or delete them.
+- **Replies render as Markdown** — bold, lists, links, and code blocks with copy
+  buttons. Pick a light/dark theme from the sidebar.
 - **Works offline out of the box.** In *demo* mode it echoes your messages back,
   so you can try the interface and watch the event stream with zero setup.
 - **Run a local model — free.** In **Settings**, choose **Ollama**, set the model
