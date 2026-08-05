@@ -2,7 +2,7 @@
 
 # glia
 
-**English** · [Русский](README.ru.md) · [Docs](https://denisdrobyshev.github.io/glia/)
+**English** · [Русский](README.ru.md) · [Docs](https://drobyshevdev.github.io/glia/)
 
 **A glass-box, minimal library for building LLM agents.** Every model call, tool
 call, and state transition is a plain object you can log, snapshot, and replay.
@@ -13,7 +13,7 @@ afternoon.
 > tissue for LLM agents — not a framework you submit to, a small library you
 > build on.
 
-[![CI](https://github.com/DenisDrobyshev/glia/actions/workflows/ci.yml/badge.svg)](https://github.com/DenisDrobyshev/glia/actions/workflows/ci.yml)
+[![CI](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml/badge.svg)](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml)
 &nbsp;Python 3.10+ &nbsp;·&nbsp; MIT &nbsp;·&nbsp; zero required dependencies &nbsp;·&nbsp; typed
 
 <p align="center">
@@ -142,7 +142,7 @@ python examples/09_record_replay.py          # record once, replay deterministic
 glia ships a **graphical shell** — a chat window that also shows the live glass
 box (streaming tokens, tool calls, approvals) as it happens.
 
-- **Download** a standalone build for your OS from the [latest release](https://github.com/DenisDrobyshev/glia/releases/latest) (`glia-shell-windows.exe` / `-macos` / `-linux`) — no Python needed.
+- **Download** a standalone build for your OS from the [latest release](https://github.com/DrobyshevDev/glia/releases/latest) (`glia-shell-windows.exe` / `-macos` / `-linux`) — no Python needed.
 - **Or** `pip install "glia-agents[shell]"` then `glia-shell` for a native window.
 
 It works offline in demo mode out of the box; add an Anthropic API key in
@@ -163,7 +163,7 @@ Full details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Project docs
 
-- **[Documentation site](https://denisdrobyshev.github.io/glia/)** — full guide, available in **English** and **Русский**
+- **[Documentation site](https://drobyshevdev.github.io/glia/)** — full guide, available in **English** and **Русский**
 - [Strategy & market analysis](docs/STRATEGY.md) — why glia, and who it competes with
 - [Architecture](docs/ARCHITECTURE.md) — how the whole thing works
 - [Roadmap](docs/ROADMAP.md) — where it's going

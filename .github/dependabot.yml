@@ -1,0 +1,31 @@
+version: 2
+
+updates:
+  # Actions are the highest-value thing to keep current: a stale third-party
+  # action is a supply-chain risk in every workflow that uses it.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    commit-message:
+      prefix: "ci"
+    groups:
+      actions:
+        patterns: ["*"]
+
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    commit-message:
+      prefix: "deps"
+    # The core is zero-dependency on purpose, so almost everything here is dev
+    # tooling: one grouped PR for it, and anything that does reach the runtime
+    # gets its own PR to be read properly.
+    groups:
+      dev-tooling:
+        patterns: ["ruff", "mypy", "pytest*", "pre-commit", "build", "twine", "mkdocs*"]
+        dependency-type: development
+    open-pull-requests-limit: 5

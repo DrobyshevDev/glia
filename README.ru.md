@@ -2,7 +2,7 @@
 
 # glia
 
-[English](README.md) · **Русский** · [Документация](https://denisdrobyshev.github.io/glia/)
+[English](README.md) · **Русский** · [Документация](https://drobyshevdev.github.io/glia/)
 
 **Минималистичная «прозрачная» (glass-box) библиотека для создания LLM-агентов.**
 Каждый вызов модели, каждый вызов инструмента и каждое изменение состояния —
@@ -14,7 +14,7 @@
 > «соединительная ткань» для LLM-агентов: не фреймворк, которому вы
 > подчиняетесь, а небольшая библиотека, поверх которой вы строите.
 
-[![CI](https://github.com/DenisDrobyshev/glia/actions/workflows/ci.yml/badge.svg)](https://github.com/DenisDrobyshev/glia/actions/workflows/ci.yml)
+[![CI](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml/badge.svg)](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml)
 &nbsp;Python 3.10+ &nbsp;·&nbsp; MIT &nbsp;·&nbsp; ядро без зависимостей &nbsp;·&nbsp; типизировано
 
 <p align="center">
@@ -146,7 +146,7 @@ python examples/09_record_replay.py          # записать один раз,
 показывает «стеклянный ящик» в реальном времени (стриминг токенов, вызовы
 инструментов, подтверждения).
 
-- **Скачайте** готовую сборку под вашу ОС из [последнего релиза](https://github.com/DenisDrobyshev/glia/releases/latest) (`glia-shell-windows.exe` / `-macos` / `-linux`) — Python не нужен.
+- **Скачайте** готовую сборку под вашу ОС из [последнего релиза](https://github.com/DrobyshevDev/glia/releases/latest) (`glia-shell-windows.exe` / `-macos` / `-linux`) — Python не нужен.
 - **Или** `pip install "glia-agents[shell]"` и затем `glia-shell` для нативного окна.
 
 Работает офлайн в demo-режиме из коробки; добавьте Anthropic API-ключ в
@@ -155,7 +155,7 @@ python examples/09_record_replay.py          # записать один раз,
 
 ## Документация
 
-- **[Сайт документации](https://denisdrobyshev.github.io/glia/)** — полное руководство на **English** и **Русском**
+- **[Сайт документации](https://drobyshevdev.github.io/glia/)** — полное руководство на **English** и **Русском**
 - [Стратегия и анализ рынка](docs/STRATEGY.md) — зачем glia и с кем конкурирует
 - [Архитектура](docs/ARCHITECTURE.md) — как всё устроено
 - [Дорожная карта](docs/ROADMAP.md) — куда движемся
