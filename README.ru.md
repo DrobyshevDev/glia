@@ -14,7 +14,7 @@
 > «соединительная ткань» для LLM-агентов: не фреймворк, которому вы
 > подчиняетесь, а небольшая библиотека, поверх которой вы строите.
 
-[![CI](https://github.com/DenisDrobyshev/glia/actions/workflows/ci.yml/badge.svg)](https://github.com/DenisDrobyshev/glia/actions/workflows/ci.yml)
+[![CI](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml/badge.svg)](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml)
 &nbsp;Python 3.10+ &nbsp;·&nbsp; MIT &nbsp;·&nbsp; ядро без зависимостей &nbsp;·&nbsp; типизировано
 
 <p align="center">
@@ -146,7 +146,7 @@ python examples/09_record_replay.py          # записать один раз,
 показывает «стеклянный ящик» в реальном времени (стриминг токенов, вызовы
 инструментов, подтверждения).
 
-- **Скачайте** готовую сборку под вашу ОС из [последнего релиза](https://github.com/DenisDrobyshev/glia/releases/latest) (`glia-shell-windows.exe` / `-macos` / `-linux`) — Python не нужен.
+- **Скачайте** готовую сборку под вашу ОС из [последнего релиза](https://github.com/DrobyshevDev/glia/releases/latest) (`glia-shell-windows.exe` / `-macos` / `-linux`) — Python не нужен.
 - **Или** `pip install "glia-agents[shell]"` и затем `glia-shell` для нативного окна.
 
 Работает офлайн в demo-режиме из коробки; добавьте Anthropic API-ключ в

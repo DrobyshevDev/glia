@@ -9,7 +9,7 @@ judged against it:
 ## Setup
 
 ```bash
-git clone https://github.com/DenisDrobyshev/glia
+git clone https://github.com/DrobyshevDev/glia
 cd glia
 pip install -e ".[anthropic,dev]"
 ```

@@ -12,7 +12,7 @@
 ### 1. Скачать бинарник (Python не нужен)
 
 Возьмите готовую сборку под вашу ОС из
-[последнего релиза](https://github.com/DenisDrobyshev/glia/releases/latest):
+[последнего релиза](https://github.com/DrobyshevDev/glia/releases/latest):
 
 - `glia-shell-windows.exe`
 - `glia-shell-macos`

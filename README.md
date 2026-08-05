@@ -13,7 +13,7 @@ afternoon.
 > tissue for LLM agents — not a framework you submit to, a small library you
 > build on.
 
-[![CI](https://github.com/DenisDrobyshev/glia/actions/workflows/ci.yml/badge.svg)](https://github.com/DenisDrobyshev/glia/actions/workflows/ci.yml)
+[![CI](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml/badge.svg)](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml)
 &nbsp;Python 3.10+ &nbsp;·&nbsp; MIT &nbsp;·&nbsp; zero required dependencies &nbsp;·&nbsp; typed
 
 <p align="center">
@@ -142,7 +142,7 @@ python examples/09_record_replay.py          # record once, replay deterministic
 glia ships a **graphical shell** — a chat window that also shows the live glass
 box (streaming tokens, tool calls, approvals) as it happens.
 
-- **Download** a standalone build for your OS from the [latest release](https://github.com/DenisDrobyshev/glia/releases/latest) (`glia-shell-windows.exe` / `-macos` / `-linux`) — no Python needed.
+- **Download** a standalone build for your OS from the [latest release](https://github.com/DrobyshevDev/glia/releases/latest) (`glia-shell-windows.exe` / `-macos` / `-linux`) — no Python needed.
 - **Or** `pip install "glia-agents[shell]"` then `glia-shell` for a native window.
 
 It works offline in demo mode out of the box; add an Anthropic API key in

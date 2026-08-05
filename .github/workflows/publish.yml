@@ -3,7 +3,7 @@ name: Publish to PyPI
 # Publishes to PyPI via Trusted Publishing (OIDC) — no API token needed.
 # Configure the trusted publisher once on PyPI:
 #   https://pypi.org/manage/account/publishing/
-#   Project: glia-agents | Owner: DenisDrobyshev | Repo: glia | Workflow: publish.yml
+#   Project: glia-agents | Owner: DrobyshevDev | Repo: glia | Workflow: publish.yml
 # Then publishing runs automatically whenever a GitHub Release is published
 # (or manually via the "Run workflow" button / workflow_dispatch).
 

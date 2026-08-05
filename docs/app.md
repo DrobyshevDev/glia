@@ -11,7 +11,7 @@ glass box (streaming tokens, tool calls, approvals) as it happens. It runs a rea
 ### 1. Download a binary (no Python needed)
 
 Grab the standalone build for your OS from the
-[latest release](https://github.com/DenisDrobyshev/glia/releases/latest):
+[latest release](https://github.com/DrobyshevDev/glia/releases/latest):
 
 - `glia-shell-windows.exe`
 - `glia-shell-macos`

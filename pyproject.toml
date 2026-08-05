@@ -43,9 +43,9 @@ docs = ["mkdocs-material>=9.5", "mkdocs-static-i18n>=1.2"]
 glia-shell = "glia.shell.app:main"
 
 [project.urls]
-Homepage = "https://github.com/DenisDrobyshev/glia"
-Repository = "https://github.com/DenisDrobyshev/glia"
-Issues = "https://github.com/DenisDrobyshev/glia/issues"
+Homepage = "https://github.com/DrobyshevDev/glia"
+Repository = "https://github.com/DrobyshevDev/glia"
+Issues = "https://github.com/DrobyshevDev/glia/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["glia"]
