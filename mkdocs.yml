@@ -1,8 +1,8 @@
 site_name: glia
 site_description: A glass-box, minimal library for building LLM agents.
-site_url: https://denisdrobyshev.github.io/glia/
-repo_url: https://github.com/DenisDrobyshev/glia
-repo_name: DenisDrobyshev/glia
+site_url: https://drobyshevdev.github.io/glia/
+repo_url: https://github.com/DrobyshevDev/glia
+repo_name: DrobyshevDev/glia
 copyright: MIT-licensed · built by Denis Drobyshev
 
 theme:

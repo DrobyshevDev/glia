@@ -9,7 +9,7 @@ pip install "glia-agents[anthropic]"   # ядро + провайдер Claude
 Для локальной разработки из клона репозитория:
 
 ```bash
-git clone https://github.com/DenisDrobyshev/glia
+git clone https://github.com/DrobyshevDev/glia
 cd glia
 pip install -e ".[anthropic,dev]"
 ```
