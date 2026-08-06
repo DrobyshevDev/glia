@@ -1,0 +1,42 @@
+# Install with: pre-commit install
+#
+# ruff-format runs here and not in CI on purpose. Twenty files predate the
+# formatter; a CI gate would be red on day one, while this hook only touches
+# what a commit already changes.
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.20
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=512]
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      # A PyInstaller build directory is the output of release-app.yml. It is
+      # large, it is per-platform, and it has no business in the history.
+      - id: reject-pyinstaller-output
+        name: reject PyInstaller build output
+        entry: build/ and dist/ are release output, not source
+        language: fail
+        files: ^(build|dist)/
+
+      - id: pytest
+        name: pytest
+        entry: pytest -q
+        language: system
+        pass_filenames: false
+        stages: [pre-push]
