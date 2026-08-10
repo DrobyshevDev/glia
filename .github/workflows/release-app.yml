@@ -10,6 +10,8 @@ name: Build desktop app
 #
 # The matrix jobs only upload artifacts; a single `attach` job then adds them to
 # the release in one call — so concurrent uploads can't race and drop an asset.
+# That job also writes SHA256SUMS and signs a build-provenance attestation, so a
+# downloaded executable can be checked rather than trusted.
 
 on:
   release:
@@ -74,12 +76,38 @@ jobs:
     if: github.event_name == 'release'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      # Signing the provenance statement needs an OIDC token, and writing the
+      # attestation needs its own scope. Both are job-scoped rather than
+      # top-level so the matrix builds keep read-only credentials.
+      id-token: write
+      attestations: write
     steps:
       - name: Download all binaries
         uses: actions/download-artifact@v8
         with:
           path: bins
           merge-multiple: true
+
+      # A downloader who wants to check what they got needs something to check
+      # against. One file, the format sha256sum -c reads directly.
+      - name: Checksums
+        working-directory: bins
+        run: |
+          sha256sum * > SHA256SUMS
+          cat SHA256SUMS
+
+      # Signed provenance: which workflow, at which commit, produced these exact
+      # bytes. Verifiable with `gh attestation verify <file> --repo
+      # DrobyshevDev/glia` without trusting this release page.
+      - name: Attest the binaries
+        uses: actions/attest-build-provenance@v3
+        with:
+          subject-path: |
+            bins/glia-shell-windows.exe
+            bins/glia-shell-macos
+            bins/glia-shell-linux
 
       - name: Attach to release
         uses: softprops/action-gh-release@v3
