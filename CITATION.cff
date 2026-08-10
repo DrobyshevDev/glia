@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: >-
+  glia — a glass-box, minimal library for building LLM agents
+message: >-
+  If you use glia in work you publish, please cite it using this entry.
+abstract: >-
+  An agent library in which every model call, tool call and state transition is a plain object that can be logged, snapshotted and replayed. Modern techniques -- tools, structured outputs, context compaction, durable checkpoints, guardrails, subagents and evaluations-as-tests -- are opt-in primitives rather than hidden control flow. The core has no required dependencies.
+authors:
+  - family-names: Drobyshev
+    given-names: Denis
+repository-code: https://github.com/DrobyshevDev/glia
+url: https://github.com/DrobyshevDev/glia
+license: MIT
+keywords:
+  - llm-agents
+  - agent-framework
+  - observability
+  - evaluation
+  - python
