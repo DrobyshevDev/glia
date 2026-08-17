@@ -102,7 +102,7 @@ jobs:
       # bytes. Verifiable with `gh attestation verify <file> --repo
       # DrobyshevDev/glia` without trusting this release page.
       - name: Attest the binaries
-        uses: actions/attest-build-provenance@v3
+        uses: actions/attest-build-provenance@v4
         with:
           subject-path: |
             bins/glia-shell-windows.exe
