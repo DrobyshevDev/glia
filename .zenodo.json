@@ -1,0 +1,38 @@
+{
+  "upload_type": "software",
+  "title": "glia — a glass-box, minimal library for building LLM agents",
+  "description": "An agent library in which every model call, tool call and state transition is a plain object that can be logged, snapshotted and replayed. Modern techniques -- tools, structured outputs, context compaction, durable checkpoints, guardrails, subagents and evaluations-as-tests -- are opt-in primitives rather than hidden control flow. The core has no required dependencies.",
+  "creators": [
+    {
+      "name": "Drobyshev, Denis",
+      "affiliation": "DrobyshevDev"
+    }
+  ],
+  "license": "mit",
+  "keywords": [
+    "llm-agents",
+    "agent-framework",
+    "observability",
+    "evaluation",
+    "python"
+  ],
+  "access_right": "open",
+  "communities": [
+    {
+      "identifier": "drobyshevdev"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/DrobyshevDev/glia",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://drobyshevdev.github.io/glia/",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-softwaredocumentation"
+    }
+  ],
+  "language": "eng"
+}
