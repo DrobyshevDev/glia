@@ -14,7 +14,15 @@ afternoon.
 > build on.
 
 [![CI](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml/badge.svg)](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml)
-&nbsp;Python 3.10+ &nbsp;·&nbsp; MIT &nbsp;·&nbsp; zero required dependencies &nbsp;·&nbsp; typed
+[![Coverage](https://codecov.io/gh/DrobyshevDev/glia/branch/master/graph/badge.svg)](https://codecov.io/gh/DrobyshevDev/glia)
+[![PyPI](https://img.shields.io/pypi/v/glia-agents.svg)](https://pypi.org/project/glia-agents/)
+[![Python](https://img.shields.io/pypi/pyversions/glia-agents.svg)](https://pypi.org/project/glia-agents/)
+[![License](https://img.shields.io/pypi/l/glia-agents.svg)](LICENSE)
+[![Docs](https://img.shields.io/badge/docs-mkdocs--material-blue.svg)](https://drobyshevdev.github.io/glia/)
+
+[![Required dependencies](https://img.shields.io/badge/required%20dependencies-0-2ea043.svg)](pyproject.toml)
+[![Code style: ruff](https://img.shields.io/badge/lint-ruff-orange.svg)](https://github.com/astral-sh/ruff)
+[![Checked with mypy](https://img.shields.io/badge/mypy-checked-blue.svg)](https://mypy-lang.org/)
 
 <p align="center">
   <img src="docs/assets/hero.svg" alt="The glia desktop shell — a chat on the left, a live glass-box event panel on the right (animated)" width="820">
