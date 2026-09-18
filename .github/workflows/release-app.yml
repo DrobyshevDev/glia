@@ -38,9 +38,9 @@ jobs:
             bin: dist/glia-shell
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-      - uses: actions/setup-python@v7
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
         with:
           python-version: "3.12"
 
@@ -66,7 +66,7 @@ jobs:
         run: cp "${{ matrix.bin }}" "${{ matrix.asset }}"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: ${{ matrix.asset }}
           path: ${{ matrix.asset }}
@@ -85,7 +85,7 @@ jobs:
       attestations: write
     steps:
       - name: Download all binaries
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           path: bins
           merge-multiple: true
@@ -102,7 +102,7 @@ jobs:
       # bytes. Verifiable with `gh attestation verify <file> --repo
       # DrobyshevDev/glia` without trusting this release page.
       - name: Attest the binaries
-        uses: actions/attest-build-provenance@v4
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4
         with:
           subject-path: |
             bins/glia-shell-windows.exe
@@ -110,6 +110,6 @@ jobs:
             bins/glia-shell-linux
 
       - name: Attach to release
-        uses: softprops/action-gh-release@v3
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3
         with:
           files: bins/*
