@@ -15,6 +15,7 @@ afternoon.
 
 [![CI](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml/badge.svg)](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/DrobyshevDev/glia/branch/master/graph/badge.svg)](https://codecov.io/gh/DrobyshevDev/glia)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/DrobyshevDev/glia/badge)](https://scorecard.dev/viewer/?uri=github.com/DrobyshevDev/glia)
 [![PyPI](https://img.shields.io/pypi/v/glia-agents.svg)](https://pypi.org/project/glia-agents/)
 [![Python](https://img.shields.io/pypi/pyversions/glia-agents.svg)](https://pypi.org/project/glia-agents/)
 [![License](https://img.shields.io/pypi/l/glia-agents.svg)](LICENSE)
