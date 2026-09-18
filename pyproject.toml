@@ -44,6 +44,8 @@ glia-shell = "glia.shell.app:main"
 
 [project.urls]
 Homepage = "https://github.com/DrobyshevDev/glia"
+Documentation = "https://drobyshevdev.github.io/glia/"
+Changelog = "https://github.com/DrobyshevDev/glia/blob/master/CHANGELOG.md"
 Repository = "https://github.com/DrobyshevDev/glia"
 Issues = "https://github.com/DrobyshevDev/glia/issues"
 
