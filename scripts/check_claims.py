@@ -58,21 +58,45 @@ NAMES = {
 }
 
 
-def collected_tests() -> int | None:
-    """How many tests pytest actually collects. None when it could not be asked."""
+#: Colour codes around pytest's summary line. CI sets FORCE_COLOR=1 for every
+#: step, so the line arrives as "\x1b[32m\x1b[32m167 tests collected\x1b[0m…"
+#: and an anchored pattern never reaches the digits. `--color=no` below settles
+#: it; this strips them as well, because the next thing to colourise pytest's
+#: output will not announce itself either.
+ANSI = re.compile(r"\x1b\[[0-9;]*m")
+COLLECTED = re.compile(r"^(\d+) tests? collected", re.M)
+
+
+def collected_tests() -> int | str:
+    """How many tests pytest collects, or a sentence saying why it could not be asked."""
+    command = [
+        sys.executable, "-m", "pytest", "--collect-only", "-q",
+        "-p", "no:cacheprovider", "--color=no",
+    ]
     try:
         run = subprocess.run(
-            [sys.executable, "-m", "pytest", "--collect-only", "-q", "-p", "no:cacheprovider"],
-            cwd=ROOT,
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            timeout=300,
+            command, cwd=ROOT, capture_output=True, text=True, encoding="utf-8", timeout=300
         )
-    except (OSError, subprocess.TimeoutExpired):
-        return None
-    match = re.search(r"^(\d+) tests? collected", run.stdout or "", re.M)
-    return int(match.group(1)) if match else None
+    except OSError as problem:
+        return f"could not run pytest: {problem}"
+    except subprocess.TimeoutExpired:
+        return "pytest took more than 300s to collect"
+
+    output = ANSI.sub("", (run.stdout or "") + (run.stderr or ""))
+    found = COLLECTED.search(output)
+
+    # The return code is checked before the number, not after. A test file that
+    # fails to import prints "167 tests collected, 1 error" and exits 2, and a
+    # check that reads the count first says 167 and passes -- reporting that the
+    # READMEs are accurate about a suite that cannot be collected.
+    if run.returncode != 0 or not found:
+        # Say what actually happened. The first version returned a bare None and
+        # printed "could not ask pytest how many tests there are", which is true
+        # and useless: the cause was one escape sequence in front of the digits,
+        # and finding that cost a round trip through CI.
+        tail = "\n      ".join(output.strip().splitlines()[-6:])
+        return f"pytest exited {run.returncode} and the count is not trustworthy:\n      {tail}"
+    return int(found.group(1))
 
 
 #: `fail_under` inside `[tool.coverage.report]`, and nowhere else: `fail_under`
@@ -100,8 +124,8 @@ def main() -> int:
     problems: list[str] = []
 
     tests = collected_tests()
-    if tests is None:
-        print("  could not ask pytest how many tests there are", file=sys.stderr)
+    if isinstance(tests, str):
+        print(f"  {tests}", file=sys.stderr)
         return 2
 
     floor = configured_floor()
