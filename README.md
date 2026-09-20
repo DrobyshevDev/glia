@@ -181,7 +181,8 @@ Full details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 ## Status
 
 **v0.8 — alpha.** The core thesis is proven end-to-end with a full test suite
-(167 offline tests, ~95% coverage) and green CI (ruff + **mypy** + tests). v0.8
+(167 offline tests, held to a 90% coverage floor on every run — the badge above
+carries the measured figure) and green CI (ruff + **mypy** + tests). v0.8
 redesigns the desktop shell into a modern multi-conversation app (sidebar with
 persistent history, Markdown/code rendering, theme toggle); v0.7 an OpenTelemetry
 exporter; v0.6 record/replay cassettes; v0.5 OpenAI + interactive approval + MCP;

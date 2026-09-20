@@ -56,6 +56,22 @@ packages = ["glia"]
 testpaths = ["tests"]
 pythonpath = ["."]
 
+# The coverage floor, in the one place codecov.yml already says it lives.
+#
+# It used to live only in a `--cov-fail-under=90` flag on the CI command line,
+# while codecov.yml told the reader the floor was here and was "enforced
+# identically on a laptop and in CI". On a laptop `pytest --cov=glia` enforced
+# nothing at all, so the one sentence explaining why the Codecov statuses are
+# informational was the sentence that was not true.
+#
+# `--cov` is deliberately not in addopts: the second test job runs the suite
+# without coverage on purpose, and forcing it on would take that away.
+[tool.coverage.run]
+source = ["glia"]
+
+[tool.coverage.report]
+fail_under = 90
+
 [tool.ruff]
 line-length = 110
 target-version = "py310"

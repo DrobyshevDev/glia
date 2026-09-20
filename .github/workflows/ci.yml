@@ -64,7 +64,16 @@ jobs:
           pip install -e ".[dev]"
 
       - name: Tests (pytest, fully offline) + coverage gate
-        run: python -m pytest -q --cov=glia --cov-report=term-missing --cov-report=xml --cov-fail-under=90
+        # No --cov-fail-under here: the floor is in pyproject.toml, so this command
+        # and the same command on a laptop gate at the same number.
+        run: python -m pytest -q --cov=glia --cov-report=term-missing --cov-report=xml
+
+      # The READMEs state how many tests there are and what the floor is, in two
+      # languages. Neither number recomputes itself, and a test file landing is
+      # exactly the commit that makes both wrong without anything going red.
+      - name: The READMEs still describe the suite they have
+        if: matrix['python-version'] == '3.12'
+        run: python scripts/check_claims.py
       # Codecov replaces a hand-written badge with a number recomputed on every
       # run. It uploads once, from one interpreter, so parallel jobs cannot race
       # to decide what the figure is. Adding CODECOV_TOKEN is what turns the
