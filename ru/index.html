@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -350,10 +350,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#glia_1" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Зачем glia?
+        Зачем
       
     </span>
   </a>
@@ -361,7 +361,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Установка
@@ -383,7 +383,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Дальше
@@ -590,10 +590,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#glia_1" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Зачем glia?
+        Зачем
       
     </span>
   </a>
@@ -601,7 +601,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Установка
@@ -623,7 +623,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Дальше
@@ -654,26 +654,17 @@
 
 
 <h1 id="glia">glia<a class="headerlink" href="#glia" title="Permanent link">&para;</a></h1>
-<p><strong>Минималистичная «прозрачная» (glass-box) библиотека для создания LLM-агентов.</strong>
-Каждый вызов модели, каждый вызов инструмента и каждое изменение состояния —
-это обычный объект, который можно залогировать, сохранить в снапшот и
-воспроизвести. Никакого скрытого потока управления. Весь цикл помещается в один
-файл, который читается за вечер.</p>
-<blockquote>
-<p><em>glia</em> (глия) — клетки, которые поддерживают и связывают нейроны. Это
-«соединительная ткань» для LLM-агентов: не фреймворк, которому вы
-подчиняетесь, а небольшая библиотека, поверх которой вы строите.</p>
-</blockquote>
-<h2 id="glia_1">Зачем glia?<a class="headerlink" href="#glia_1" title="Permanent link">&para;</a></h2>
-<p>Рынок агентных фреймворков в 2026 году перегружен, и самая частая претензия к
-существующим решениям одна и та же: <strong>слишком много абстракций, скрытый поток
-управления, тяжело отлаживать.</strong> glia делает ставку на обратное. Современные
-техники — инструменты, структурированный вывод, стриминг, параллельный запуск
-инструментов, компакция контекста, устойчивые чек-пойнты, guardrails, human-in-
-the-loop подтверждение, сабагенты и «эвалы как тесты» — поставляются как
-<strong>опциональные примитивы, которые можно прочитать</strong>, а не как монолит, которому
-приходится доверять.</p>
-<h2 id="_1">Установка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Небольшая библиотека для создания LLM-агентов. Каждый вызов модели и
+инструмента и каждое изменение состояния — обычный объект, который можно
+записать в лог, сохранить и воспроизвести. Цикл агента помещается в один файл.</p>
+<p>Название — от глиальных клеток, которые поддерживают и связывают нейроны.</p>
+<h2 id="_1">Зачем<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Агентные фреймворки обычно прячут поток управления, поэтому их тяжело
+отлаживать. В glia цикл агента маленький и читается целиком. Инструменты,
+структурированный вывод, стриминг, параллельный запуск инструментов, сжатие
+контекста, чекпойнты, guardrails, подтверждение действий человеком, сабагенты и
+эвалы в виде тестов подключаются отдельно.</p>
+<h2 id="_2">Установка<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>glia-agents<span class="w">               </span><span class="c1"># ядро — без зависимостей</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"glia-agents[anthropic]"</span><span class="w">  </span><span class="c1"># + провайдер Claude</span>
 </code></pre></div>
@@ -698,7 +689,7 @@ the-loop подтверждение, сабагенты и «эвалы как �
 </code></pre></div>
 <p>Нет ключа API? Все примеры работают офлайн с детерминированным провайдером
 <code>EchoLLM</code> — тот же код, без обращения к сети.</p>
-<h2 id="_2">Дальше<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">Дальше<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="getting-started/">Начало работы</a> — установка, первый агент, стриминг, офлайн-тесты</li>
 <li><a href="guide/">Руководство</a> — каждый примитив с примерами кода</li>
@@ -764,10 +755,10 @@ the-loop подтверждение, сабагенты и «эвалы как �
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate", "search.suggest"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate", "search.suggest"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -35,10 +35,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -690,10 +690,10 @@
 
 
 <h1 id="desktop-app">Desktop app<a class="headerlink" href="#desktop-app" title="Permanent link">&para;</a></h1>
-<p>glia ships a small <strong>graphical shell</strong> — a chat window that also shows the live
-glass box (streaming tokens, tool calls, approvals) as it happens. It runs a real
+<p>glia comes with a small desktop shell: a chat window that also shows the event log
+(streaming tokens, tool calls, approvals) as it happens. It runs a real
 <code>glia.Agent</code> under the hood, so it doubles as a demo of the library.</p>
-<p><img alt="glia shell — a chat on the left, a live glass-box event panel on the right" src="../assets/hero.svg" /></p>
+<p><img alt="glia shell: a chat on the left and the live event panel on the right" src="../assets/hero.svg" /></p>
 <h2 id="two-ways-to-get-it">Two ways to get it<a class="headerlink" href="#two-ways-to-get-it" title="Permanent link">&para;</a></h2>
 <h3 id="1-download-a-binary-no-python-needed">1. Download a binary (no Python needed)<a class="headerlink" href="#1-download-a-binary-no-python-needed" title="Permanent link">&para;</a></h3>
 <p>Grab the standalone build for your OS from the
@@ -730,8 +730,8 @@ falling back to your browser if a window backend isn't available. Use
 <li><strong>Add a key for real Claude.</strong> Open <strong>Settings</strong>, choose <strong>Claude</strong>, paste your
   Anthropic API key (it's stored locally in your config directory and never sent
   back to the UI), pick a model, and save. Now messages go to Claude, and the two
-  demo tools (<code>current_time</code>, <code>word_count</code>) show up in the glass box when used.</li>
-<li><strong>The glass box</strong> on the right lists every event exactly as the library emits
+  demo tools (<code>current_time</code>, <code>word_count</code>) show up in the event panel when used.</li>
+<li><strong>The event panel</strong> on the right lists every event exactly as the library emits
   it — <code>model_call</code>, <code>model_delta</code>, <code>tool_called</code>, <code>tool_returned</code>,
   <code>approval_resolved</code>, <code>run_finished</code>. Toggle it with the <em>Glass box</em> button.</li>
 <li><strong>New chat</strong> starts a fresh conversation; <strong>Quit</strong> stops the local server.</li>
@@ -745,8 +745,7 @@ falling back to your browser if a window backend isn't available. Use
 <li>The only optional dependency is <code>pywebview</code>, and only for the native window;
   the downloadable binaries run in browser mode with zero third-party deps.</li>
 </ul>
-<p>In other words, the app is itself a glass box — you can read all of it under
-<code>glia/shell/</code>.</p>
+<p>All of its code is in <code>glia/shell/</code>.</p>
 
 
 
@@ -806,10 +805,10 @@ falling back to your browser if a window backend isn't available. Use
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate", "search.suggest"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate", "search.suggest"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>
