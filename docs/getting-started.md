@@ -61,8 +61,8 @@ compaction, approval — runs in CI with no cost and no flakiness.
 
 ## Watch every step
 
-The agent emits an event for everything it does. Consume the event stream to see
-the glass box working:
+The agent emits an event for everything it does. Read the event stream to see
+what the agent is doing:
 
 ```python
 async for event in agent.run_events("What is 21 + 21?"):

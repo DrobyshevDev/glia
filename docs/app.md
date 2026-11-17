@@ -1,10 +1,10 @@
 # Desktop app
 
-glia ships a small **graphical shell** — a chat window that also shows the live
-glass box (streaming tokens, tool calls, approvals) as it happens. It runs a real
+glia comes with a small desktop shell: a chat window that also shows the event log
+(streaming tokens, tool calls, approvals) as it happens. It runs a real
 `glia.Agent` under the hood, so it doubles as a demo of the library.
 
-![glia shell — a chat on the left, a live glass-box event panel on the right](assets/hero.svg)
+![glia shell: a chat on the left and the live event panel on the right](assets/hero.svg)
 
 ## Two ways to get it
 
@@ -49,8 +49,8 @@ falling back to your browser if a window backend isn't available. Use
 - **Add a key for real Claude.** Open **Settings**, choose **Claude**, paste your
   Anthropic API key (it's stored locally in your config directory and never sent
   back to the UI), pick a model, and save. Now messages go to Claude, and the two
-  demo tools (`current_time`, `word_count`) show up in the glass box when used.
-- **The glass box** on the right lists every event exactly as the library emits
+  demo tools (`current_time`, `word_count`) show up in the event panel when used.
+- **The event panel** on the right lists every event exactly as the library emits
   it — `model_call`, `model_delta`, `tool_called`, `tool_returned`,
   `approval_resolved`, `run_finished`. Toggle it with the *Glass box* button.
 - **New chat** starts a fresh conversation; **Quit** stops the local server.
@@ -65,5 +65,4 @@ The shell is deliberately thin and dependency-light:
 - The only optional dependency is `pywebview`, and only for the native window;
   the downloadable binaries run in browser mode with zero third-party deps.
 
-In other words, the app is itself a glass box — you can read all of it under
-`glia/shell/`.
+All of its code is in `glia/shell/`.

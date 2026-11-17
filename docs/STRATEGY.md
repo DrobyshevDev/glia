@@ -50,13 +50,13 @@ Three findings from the 2026 literature point at the same unmet need:
    over large frameworks they must trust.
 
 **The gap:** a _small, transparent, fully-debuggable_ library that ships the
-modern techniques as **opt-in primitives** rather than a framework you submit to.
+modern techniques as **opt-in primitives** on top of a small core.
 
 ## 4. Positioning
 
-> **glia is the glass-box agent library.** Every model call, tool call, and state
-> transition is a plain object you can log, snapshot, and replay. No hidden
-> control flow. The whole loop fits in one file you can read in an afternoon.
+> **glia is a small, transparent agent library.** Every model call, tool call and
+> state change is a plain object that can be logged, saved and replayed. The agent
+> loop is a single file.
 
 Analogy: glia aims to be the **`httpx`/`FastAPI` of agents** — small, typed,
 composable, boring in the best way — not the Django. It competes on

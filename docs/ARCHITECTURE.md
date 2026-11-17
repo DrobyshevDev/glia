@@ -29,7 +29,7 @@ does, you read `agent.py`. If you want to know what state it holds, you read
 | `types.py` | Content blocks, `Message`, `Usage`. Immutable, JSON-serialisable. | ~170 |
 | `llm.py` | The provider boundary: `LLMRequest`, `LLMResponse`, and the `LLM` protocol. | ~90 |
 | `tools.py` | `@tool` decorator (schema from type hints), `ToolRegistry`. | ~230 |
-| `trajectory.py` | The run state + the `Event` types. The glass box itself. | ~250 |
+| `trajectory.py` | The run state + the `Event` types: everything the loop records. | ~250 |
 | `agent.py` | The loop. `run()` and `run_events()`. | ~230 |
 | `memory.py` | Context engineering: compactors. | ~140 |
 | `guardrails.py` | Input/output validators. | ~90 |

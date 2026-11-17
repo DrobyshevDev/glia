@@ -1,23 +1,18 @@
 # glia
 
-**A glass-box, minimal library for building LLM agents.** Every model call, tool
-call, and state transition is a plain object you can log, snapshot, and replay.
-No hidden control flow. The whole loop fits in one file you can read in an
-afternoon.
+A small library for building LLM agents. Every model call, tool call and state
+change is a plain object that can be logged, saved and replayed. The agent loop
+is a single file.
 
-> _glia_ (n.): the cells that support and connect neurons. This is the connective
-> tissue for LLM agents — not a framework you submit to, a small library you
-> build on.
+The name comes from glial cells, which support and connect neurons.
 
-## Why glia?
+## Why
 
-The 2026 agent-framework field is crowded, and the loudest complaint about the
-incumbents is the same: **too much abstraction, hidden control flow, painful to
-debug.** glia is the opposite bet. It ships the modern techniques — tools,
-structured outputs, streaming, parallel tool execution, context compaction,
-durable checkpoints, guardrails, a human-in-the-loop approval gate, subagents,
-and evals-as-tests — as **opt-in primitives you can read**, not a monolith you
-must trust.
+Agent frameworks tend to hide the control flow, which makes them hard to debug.
+glia keeps the loop small enough to read. Tools, structured outputs, streaming,
+parallel tool execution, context compaction, checkpoints, guardrails, a
+human-in-the-loop approval gate, subagents and evaluations written as tests are
+optional modules on top of it.
 
 ## Install
 
