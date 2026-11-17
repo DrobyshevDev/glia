@@ -4,14 +4,11 @@
 
 **English** · [Русский](README.ru.md) · [Docs](https://drobyshevdev.github.io/glia/)
 
-**A glass-box, minimal library for building LLM agents.** Every model call, tool
-call, and state transition is a plain object you can log, snapshot, and replay.
-No hidden control flow. The whole loop fits in one file you can read in an
-afternoon.
+A small library for building LLM agents. Every model call, tool call and state
+change is a plain object that can be logged, saved and replayed. The agent loop
+is a single file.
 
-> _glia_ (n.): the cells that support and connect neurons. This is the connective
-> tissue for LLM agents — not a framework you submit to, a small library you
-> build on.
+The name comes from glial cells, which support and connect neurons.
 
 [![CI](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml/badge.svg)](https://github.com/DrobyshevDev/glia/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/DrobyshevDev/glia/branch/master/graph/badge.svg)](https://codecov.io/gh/DrobyshevDev/glia)
@@ -26,29 +23,21 @@ afternoon.
 [![Checked with mypy](https://img.shields.io/badge/mypy-checked-blue.svg)](https://mypy-lang.org/)
 
 <p align="center">
-  <img src="docs/assets/hero.svg" alt="The glia desktop shell — a chat on the left, a live glass-box event panel on the right (animated)" width="820">
-  <br><sub>The desktop shell — streaming reply on the left, the live glass box on the right. <i>(Animated SVG; it plays in your browser.)</i></sub>
+  <img src="docs/assets/hero.svg" alt="The glia desktop shell: a chat on the left and the live event log on the right (animated)" width="820">
+  <br><sub>The desktop shell: streaming reply on the left, event log on the right. Animated SVG, plays in the browser.</sub>
 </p>
 
 ---
 
-## Why another agent library?
+## Why
 
-The 2026 agent-framework field is crowded, and the loudest, most consistent
-complaint about the incumbents is the same: **too much abstraction, hidden
-control flow, painful to debug.** Developers keep stripping the framework out to
-call the model API directly, just to see what's happening.
+Agent frameworks tend to hide the control flow, which makes them hard to debug.
+glia keeps the loop small enough to read. Tools, structured outputs, context
+compaction, checkpoints, guardrails, subagents and evaluations written as tests
+are optional modules on top of it.
 
-glia is the opposite bet. It ships the modern techniques — tools, structured
-outputs, context compaction, durable checkpoints, guardrails, subagents,
-evals-as-tests — as **opt-in primitives you can read**, not a monolith you must
-trust. The design goal is understandability and control, not feature count.
-
-If you want a graph engine, use [LangGraph](https://github.com/langchain-ai/langgraph).
-If you want role-play crews, use [CrewAI](https://github.com/crewAIInc/crewAI).
-If you want a small, transparent loop you fully understand — glia.
-
-See [docs/STRATEGY.md](docs/STRATEGY.md) for the full market analysis.
+For a graph engine, [LangGraph](https://github.com/langchain-ai/langgraph) is a
+better fit; for role-based teams of agents, [CrewAI](https://github.com/crewAIInc/crewAI).
 
 ## Install
 
@@ -90,7 +79,7 @@ from glia.providers import EchoLLM, call
 llm = EchoLLM([call("get_weather", {"city": "Paris"}), "It's 18°C and cloudy."])
 ```
 
-## See the whole glass box
+## Event log
 
 Because the loop emits an event for everything it does, you can watch it work:
 
@@ -148,8 +137,8 @@ python examples/09_record_replay.py          # record once, replay deterministic
 
 ## Desktop app
 
-glia ships a **graphical shell** — a chat window that also shows the live glass
-box (streaming tokens, tool calls, approvals) as it happens.
+glia comes with a desktop shell: a chat window that also shows the event log
+(streaming tokens, tool calls, approvals) as it happens.
 
 - **Download** a standalone build for your OS from the [latest release](https://github.com/DrobyshevDev/glia/releases/latest) (`glia-shell-windows.exe` / `-macos` / `-linux`) — no Python needed.
 - **Or** `pip install "glia-agents[shell]"` then `glia-shell` for a native window.
@@ -173,16 +162,15 @@ Full details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 ## Project docs
 
 - **[Documentation site](https://drobyshevdev.github.io/glia/)** — full guide, available in **English** and **Русский**
-- [Strategy & market analysis](docs/STRATEGY.md) — why glia, and who it competes with
+- [Strategy](docs/STRATEGY.md): why glia exists and how it compares with other libraries
 - [Architecture](docs/ARCHITECTURE.md) — how the whole thing works
 - [Roadmap](docs/ROADMAP.md) — where it's going
 - [Contributing](CONTRIBUTING.md)
 
 ## Status
 
-**v0.8 — alpha.** The core thesis is proven end-to-end with a full test suite
-(167 offline tests, held to a 90% coverage floor on every run — the badge above
-carries the measured figure) and green CI (ruff + **mypy** + tests). v0.8
+v0.8, alpha. 167 offline tests with a 90% coverage threshold; ruff and mypy run
+in CI. v0.8
 redesigns the desktop shell into a modern multi-conversation app (sidebar with
 persistent history, Markdown/code rendering, theme toggle); v0.7 an OpenTelemetry
 exporter; v0.6 record/replay cassettes; v0.5 OpenAI + interactive approval + MCP;
