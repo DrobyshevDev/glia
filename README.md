@@ -169,8 +169,8 @@ Full details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Status
 
-v0.8, alpha. 167 offline tests with a 90% coverage threshold; ruff and mypy run
-in CI. v0.8
+v0.8, alpha. Tests run without network access (167 offline tests) with
+a 90% coverage floor; ruff and mypy run in CI. v0.8
 redesigns the desktop shell into a modern multi-conversation app (sidebar with
 persistent history, Markdown/code rendering, theme toggle); v0.7 an OpenTelemetry
 exporter; v0.6 record/replay cassettes; v0.5 OpenAI + interactive approval + MCP;
